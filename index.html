@@ -1,85 +1,91 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+
+<head>
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap"
-      rel="stylesheet"
-    />
+    <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="style.css" />
     <script src="js/index.js"></script>
     <title>Rock Paper Scissors</title>
-  </head>
-  <body>
+</head>
+
+<body>
     <div class="wrapper">
-      <!-- scoreboard -->
-      <div class="scoreboard">
-        <div class="title">
-          <img src="/assets/title.png" />
+        <!-- scoreboard -->
+        <div class="scoreboard">
+            <div class="title">
+                <img src="/assets/title.png" />
+            </div>
+            <div class="score">
+                <p>SCORE</p>
+                <div class="userName">
+                    <p>YOU</p>
+                    <p>COMPUTER</p>
+                </div>
+                <div class="scoreNumber">
+                    <h1 class="user">0</h1>
+                    <h1>-</h1>
+                    <h1 class="computer">0</h1>
+                </div>
+            </div>
         </div>
-        <div class="score">
-          <p>SCORE</p>
-          <div class="userName">
-            <p>YOU</p>
-            <p>COMPUTER</p>
-          </div>
-          <div class="scoreNumber">
-            <h1 class="user">0</h1>
-            <h1>-</h1>
-            <h1 class="computer">0</h1>
-          </div>
+        <!-- hands -->
+        <div class="hands">
+            <div class="hand paper">
+                <img src="/assets/Paper.png" onclick="pickUserHand('paper')" />
+            </div>
+            <div class="hand scissors">
+                <img src="/assets/Scissors.png" onclick="pickUserHand('scissors')" />
+            </div>
+            <div class="hand rock">
+                <img src="/assets/Rock.png" onclick="pickUserHand('rock')" />
+            </div>
         </div>
-      </div>
-      <!-- hands -->
-      <div class="hands">
-        <div class="hand paper">
-          <img src="/assets/Paper.png" onclick="pickUserHand('paper')" />
+        <!-- contest -->
+        <div class="contest">
+            <div class="userhand">
+                <h1>YOU PICKED</h1>
+                <div class="handImageContainer">
+                    <img src="/assets/Paper.png" id="userPickImage" />
+                </div>
+            </div>
+            <div class="referee">
+                <div class="decision">
+                    <h1>YOU WIN</h1>
+                </div>
+                <div class="newGame" onclick="playAgain()">PLAY AGAIN</div>
+            </div>
+            <div class="computerhand">
+                <h1>COMPUTER PICKED</h1>
+                <div class="handImageContainer">
+                    <img src="/assets/Scissors.png" id="computerPickImage" />
+                </div>
+            </div>
+            <div class="refereeMobile">
+                <div class="decisionMobile">
+                    <h1>YOU WIN</h1>
+                </div>
+                <div class="newGame" onclick="playAgain()">PLAY AGAIN</div>
+            </div>
         </div>
-        <div class="hand scissors">
-          <img src="/assets/Scissors.png" onclick="pickUserHand('scissors')" />
-        </div>
-        <div class="hand rock">
-          <img src="/assets/Rock.png" onclick="pickUserHand('rock')" />
-        </div>
-      </div>
-      <!-- contest -->
-      <div class="contest">
-        <div class="userhand">
-          <h1>YOU PICKED</h1>
-          <div class="handImageContainer">
-            <img src="/assets/Paper.png" id="userPickImage" />
-          </div>
-        </div>
-        <div class="referee">
-          <div class="decision">
-            <h1>YOU WIN</h1>
-          </div>
-          <div class="newGame" onclick="playAgain()">PLAY AGAIN</div>
-        </div>
-        <div class="computerhand">
-          <h1>THE HOUSE PICKED</h1>
-          <div class="handImageContainer">
-            <img src="/assets/Scissors.png" id="computerPickImage" />
-          </div>
-        </div>
-      </div>
-      <audio class="win">
-        <!-- <source src="/assets/mixkit-victory.wav" type="audio/wav" /> -->
+        <audio class="win">
+        <source src="/assets/mixkit-victory.wav" type="audio/wav" />
         <source src="/assets/win.wav" type="audio/wav" />
       </audio>
-      <audio class="lose">
+        <audio class="lose">
         <source src="/assets/mixkit-lose.wav" type="audio/wav" />
       </audio>
-      <audio class="click">
+        <audio class="click">
         <source src="/assets/click.wav" type="audio/wav" />
       </audio>
-      <audio class="miss">
+        <audio class="miss">
         <source src="/assets/miss.wav" type="audio/wav" />
       </audio>
     </div>
-  </body>
+</body>
+
 </html>
